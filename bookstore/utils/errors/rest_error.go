@@ -3,22 +3,22 @@ package errors
 import "net/http"
 
 type RestErr struct {
-	Message string 	`json:"message"`
-	Status 	int		`json:"status"`
-	Error	string	`json:"error"`
+	Message string `json:"message"`
+	Status  int    `json:"status"`
+	Error   string `json:"error"`
 }
 
-func NewBadRequestError(message string)*RestErr{
+func NewBadRequestError(message string) *RestErr {
 	return &RestErr{
-		Message: 	"",
-		Status:	  	http.StatusBadRequest,
-		Error: 		"bad_request",
+		Message: "",
+		Status:  http.StatusBadRequest,
+		Error:   "bad_request",
 	}
 }
-func NewNotFoundError(message string)*RestErr{
+func NewNotFoundError(message string) *RestErr {
 	return &RestErr{
-		Message: 	"",
-		Status:	  	http.StatusNotFound,
-		Error: 		"not_found",
+		Message: "",
+		Status:  http.StatusNotFound,
+		Error:   "not_found",
 	}
 }

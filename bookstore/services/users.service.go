@@ -13,11 +13,11 @@ func GetUser(userId int64) (*users.User, *errors.RestErr) {
 	return result, nil
 }
 
-func CreateUser(user users.User) (*users.User, *errors.RestErr){
-	if err := user.ValidateUser(); err!=nil{
+func CreateUser(user users.User) (*users.User, *errors.RestErr) {
+	if err := user.ValidateUser(); err != nil {
 		return nil, err
 	}
-	if err:= user.Save(); err!=nil{
+	if err := user.Save(); err != nil {
 		return nil, err
 	}
 	return &user, nil

@@ -2,6 +2,6 @@ package main
 
 import "bookstore/app"
 
-func main()  {
+func main() {
 	app.StartApplication()
 }

@@ -10,9 +10,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CreateUser(c *gin.Context)  {
+func CreateUser(c *gin.Context) {
 	var user users.User
-	if err:= c.ShouldBindJSON(&user); err!=nil{
+	if err := c.ShouldBindJSON(&user); err != nil {
 		restErr := errors.NewBadRequestError("Invalid json body")
 		c.JSON(restErr.Status, restErr)
 		return
@@ -24,7 +24,7 @@ func CreateUser(c *gin.Context)  {
 	}
 	c.JSON(http.StatusCreated, result)
 }
-func GetUser(c *gin.Context)  {
+func GetUser(c *gin.Context) {
 	userId, userErr := strconv.ParseInt(c.Param("user"), 10, 64)
 	if userErr != nil {
 		err := errors.NewBadRequestError("invalid user id")
